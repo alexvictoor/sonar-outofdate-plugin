@@ -8,11 +8,19 @@
   <version>0.1-SNAPSHOT</version>
   <name>Sonar Out Of Date Plugin</name>
   <description>Plugin that displays error messages on out of date dashboards</description>
+  
+  <parent>
+    <groupId>org.codehaus.sonar-plugins</groupId>
+    <artifactId>parent</artifactId>
+    <version>13</version>
+    <relativePath>../parent</relativePath>
+  </parent>
 
   <properties>
     <sonar.buildVersion>2.10</sonar.buildVersion>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jdk.min.version>1.5</jdk.min.version>
+	<license.owner>Alexandre Victoor</license.owner>
   </properties>
 
   <dependencies>
