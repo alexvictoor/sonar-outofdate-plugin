@@ -1,0 +1,22 @@
+<%
+ threshold = Time.now - 60 * 60 * 24 * widget_properties["days"]
+ if threshold > @snapshot.created_at
+%>
+<!--<div class="dashbox">
+<p class="big alert_ERROR"><%= widget_properties["message"] -%></p>
+</div>-->
+
+<script type="text/javascript">
+var messageElement = document.createElement('div');
+messageElement.setAttribute('class', 'big alert_ERROR');
+messageElement.setAttribute('style', 'width: 100%');
+messageElement.innerHTML = "<%= widget_properties["message"] -%>";
+
+var sonarContent = $$('div[id=\"error\"]').first().parentNode;
+sonarContent.insertBefore(messageElement, sonarContent.firstChild);
+
+//var titleElement = $("snapshot_title").down("h4");
+//titleElement.update("<span class='big alert_ERROR'>"+ titleElement.firstChild.data +"</span>"+titleElement.firstDescendant().innerHTML);
+</script>
+
+<% end %>
